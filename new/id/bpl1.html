@@ -10,31 +10,67 @@
 
     <style>
         body,
-        html {background:000;
+        html {background-color: 000;
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
         }
 
-        #myElement {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 560px;
-    height: 280px;
-    object-fit: contain;
-}
+        .jwplayer {
+            position: absolute !important;
+        }
 
-        #logoContainer {
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+        .jw-logo-container {
+            position: absolute;
+            top: 2%;
+            right: 55%;
+        }
+    #logoContainer {
             position: absolute;
             top: 5px;
-            right: 10px;
+            right: 8px;
             z-index: 999;
         }
 
         #logoContainer img {
             max-width: 80px;
+        }
+
+
+        @media (min-width: 600px) {
+            #myElement {
+                max-width: 650px;
+                max-height: 350px;
+                margin-top: 20px;
+                margin-left: 1px;
+                margin-right: 1px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #myElement {
+                max-width: 320px;
+                max-height: 180px;
+                margin-top: 20px;
+                margin-left: 1px;
+                margin-right: 1px;
+            }
+        }
+
+
+        p {
+            margin-bottom: 50px;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            font-family: sans-serif;
+            font-size: 20px;
+            color: cornflowerblue;
         }
 
         #settingsContainer {
@@ -51,8 +87,6 @@
             border: none;
             cursor: pointer;
         }
-
-      
     </style>
 </head>
 
@@ -62,7 +96,8 @@
     </div>
     <div id='myElement'>Loading the player...</div>
 
-    <script type='text/javascript' src="//starplay2.netlify.app/player/freeiptv25_v2_jwplayercustom_jwplayer-7.11.0_jwplayer.js"></script>
+
+   <script type='text/javascript' src="//starplay2.netlify.app/player/freeiptv25_v2_jwplayercustom_jwplayer-7.11.0_jwplayer.js"></script>
     <script type='text/javascript'>
         jwplayer.key = "JTGE07Ok+RFyC39Hbk/0sU5pENovRRZIhEzX9Q==";
     </script>
@@ -73,19 +108,21 @@
             "hlshtml": true,
             "autostart": true,
             "primary": "html5",
+
             "displaydescription": false,
-            "file": "https://anya-playlist.saqlainhaider.workers.dev/wanda.m3u8?id=18",
+            "file": "https://livess.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/anandatv.stream/chunks.m3u8",
             "title": "STAR PLAY",
             "displaytitle": true,
             "type": "hls",
             "id": "vemba_player_EvpUz",
-            "logo": {
+
+"logo": {
                 file: "",
                 hide: false,
                 position: "top-right",
-                height: "15px",
-                width: "25px",
-            },
+                height: "30px",
+                width: "40px",
+                        },
             "controls": true,  // Enable default controls
             "controlbar": {
                 "autoQualityButton": true  // Enable auto quality button
