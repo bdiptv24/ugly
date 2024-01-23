@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,27 @@
             background-color: black;
             margin: 0;
         }
+
+        .responsive-embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio (9 / 16 * 100) */
+        }
+
+        .responsive-embed-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
-<body> <iframe class="responsive-embed-item" src="https://rohabtvaudio.online/api/token.php?stream=funs" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+
+<body>
+    <div class="responsive-embed-container">
+        <iframe class="responsive-embed-item" src="https://rohabtvaudio.online/api/token.php?stream=funs" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    </div>
 </body>
+
 </html>
