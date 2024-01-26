@@ -1,1 +1,75 @@
-Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Include JW Player library script -->
+    <script type='text/javascript' src="//starplay2.netlify.app/player/freeiptv25_v2_jwplayercustom_jwplayer-7.11.0_jwplayer.js"></script>
+    
+    <style>
+        /* Set the background color of the website to black */
+        body {
+            background-color: black;
+            color: white; /* Set text color to white for better visibility */
+        }
+
+        /* Set the player container to 100% width and height */
+        #myElement {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Add left and right margins to the wrapper container */
+        #wrapper {
+            margin: 0px; /* Top and bottom margin */
+            margin-left: 0px; /* Left margin */
+            margin-right: 0px; /* Right margin */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Your HTML content goes here -->
+
+<!-- Wrapper container with margins -->
+<div id="wrapper">
+    <!-- JW Player container -->
+    <div id="myElement"></div>
+</div>
+
+<!-- Include JW Player configuration script -->
+<script type='text/javascript'>
+    jwplayer.key = "JTGE07Ok+RFyC39Hbk/0sU5pENovRRZIhEzX9Q==";
+</script>
+<script type='text/javascript'>
+    this.player = jwplayer("myElement");
+    this.player.setup({
+        "width": "100%",  // Set the player width to 100%
+        "aspectratio": "16:10", // Set the aspect ratio for the player
+        "preload": "auto",
+        "hlshtml": true,
+        "autostart": true,
+        "primary": "html5",
+        "displaydescription": false,
+        "file": "https://cdn.retosprime.com/ayna.php?id=28&e=.m3u8",
+        "title": "STAR PLAY",
+        "displaytitle": true,
+        "type": "hls",
+        "id": "vemba_player_EvpUz",
+        "logo": {
+            file: "",
+            hide: false,
+            position: "top-right",
+            height: "30px",
+            width: "40px",
+        },
+        "controls": true,
+        "controlbar": {
+            "autoQualityButton": true
+        }
+    });
+</script>
+
+</body>
+</html>
