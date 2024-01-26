@@ -1,37 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>STARP PLAY LIVE SPORTS</title>
+    <title>Your Page Title</title>
+    <!-- Include JW Player library script -->
+    <script type='text/javascript' src="//starplay2.netlify.app/player/freeiptv25_v2_jwplayercustom_jwplayer-7.11.0_jwplayer.js"></script>
+    
     <style>
+        /* Set the background color of the website to black */
         body {
             background-color: black;
-            margin: 0;
+            color: white; /* Set text color to white for better visibility */
         }
 
-        .responsive-embed-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 65%; /* Increase the padding-bottom value for a taller player */
-        }
-
-        .responsive-embed-item {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Set the player container to 100% width and height */
+        #myElement {
             width: 100%;
             height: 100%;
         }
+
+        /* Add left and right margins to the wrapper container */
+        #wrapper {
+            margin: 0px; /* Top and bottom margin */
+            margin-left: 0px; /* Left margin */
+            margin-right: 0px; /* Right margin */
+        }
     </style>
 </head>
-
 <body>
-    <div class="responsive-embed-container">
-        <iframe class="responsive-embed-item" src="https://rohabtvaudio.online/api/token.php?stream=funs" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-    </div>
-</body>
 
+<!-- Your HTML content goes here -->
+
+<!-- Wrapper container with margins -->
+<div id="wrapper">
+    <!-- JW Player container -->
+    <div id="myElement"></div>
+</div>
+
+<!-- Include JW Player configuration script -->
+<script type='text/javascript'>
+    jwplayer.key = "JTGE07Ok+RFyC39Hbk/0sU5pENovRRZIhEzX9Q==";
+</script>
+<script type='text/javascript'>
+    this.player = jwplayer("myElement");
+    this.player.setup({
+        "width": "100%",  // Set the player width to 100%
+        "aspectratio": "16:11", // Set the aspect ratio for the player
+        "preload": "auto",
+        "hlshtml": true,
+        "autostart": true,
+        "primary": "html5",
+        "displaydescription": false,
+        "file": "https://bpl2024.durbinlive.com:8012/tsports/index.m3u8?token=dac1aabace83f7ad1532c27024c9f45003e52ef8-f2ded56d755b084fa5e84c047fe00def-1706284935-1706274135",
+        "title": "STAR PLAY",
+        "displaytitle": true,
+        "type": "hls",
+        "id": "vemba_player_EvpUz",
+        "logo": {
+            file: "",
+            hide: false,
+            position: "top-right",
+            height: "30px",
+            width: "40px",
+        },
+        "controls": true,
+        "controlbar": {
+            "autoQualityButton": true
+        }
+    });
+</script>
+
+</body>
 </html>
