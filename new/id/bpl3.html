@@ -16,11 +16,18 @@
         .watermark {
             position: relative;
             color: white;
-            font-size: 15px;
+            font-size: 20px; /* Default font size for larger screens */
             opacity: 0.5;
             white-space: nowrap;
-            animation: scrollWatermark 35s linear infinite; /* Adjust duration for slower speed */
+            animation: scrollWatermark 30s linear infinite; /* Adjust duration for slower speed */
             transform: translateX(100%); /* Initial position outside of the visible area */
+        }
+
+        @media (max-width: 767px) {
+            /* Mobile view */
+            .watermark {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
         }
 
         @keyframes scrollWatermark {
@@ -50,7 +57,7 @@
             <source src="https://ayna-playlist.saqlainhaider.workers.dev/wanda.m3u8?id=28&e=.m3u8" type="application/x-mpegURL"></source>
         </video>
         <div class="watermark-container">
-            <div class="watermark">Join our Official Telegram Channel @freeiptv25 ! Thank You.</div>
+            <div class="watermark">Breaking News: Your News Headline Here</div>
         </div>
     </div>
 
