@@ -9,7 +9,6 @@
             position: absolute;
             bottom: 35px;
             left: 10px;
-           rights: 10px;
             width: 100%;
             overflow: hidden;
         }
@@ -17,10 +16,11 @@
         .watermark {
             position: relative;
             color: white;
-            font-size: 14px;
+            font-size: 15px;
             opacity: 0.5;
             white-space: nowrap;
             animation: scrollWatermark 30s linear infinite; /* Adjust duration for slower speed */
+            transform: translateX(100%); /* Initial position outside of the visible area */
         }
 
         @keyframes scrollWatermark {
