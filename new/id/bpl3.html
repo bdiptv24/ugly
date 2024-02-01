@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="robots" content ="noindex,nofollow">
-   <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet"></link>
-<!-- CSS_ADSBLOCK_START -->
-<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
-<!-- CSS_ADSBLOCK_END -->
+    <meta name="robots" content="noindex,nofollow">
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet"></link>
+    <style>
+        .watermark-container {
+            position: absolute;
+            bottom: 35px;
+            left: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .watermark {
+            position: relative;
+            color: white;
+            font-size: 14px;
+            opacity: 0.5;
+            white-space: nowrap;
+            animation: scrollWatermark 30s linear infinite; /* Adjust duration for slower speed */
+        }
+
+        @keyframes scrollWatermark {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        #my-video.vjs-fullscreen .watermark-container {
+            bottom: 50px; /* Adjust the bottom position for fullscreen mode */
+            left: 50px; /* Adjust the left position for fullscreen mode */
+            animation: none; /* Remove animation in fullscreen mode if desired */
+        }
+    </style>
+    <!-- CSS_ADSBLOCK_START -->
+    <link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
+    <!-- CSS_ADSBLOCK_END -->
 </head>
 
 <body>
-   <video class="video-js vjs-big-play-centered vjs-theme-sea" controls="" data-setup="{}" fluid="true" id="my-video" poster="" preload="auto">
-      <source src="https://ayna-playlist.saqlainhaider.workers.dev/wanda.m3u8?id=28&e=.m3u8" type="application/x-mpegURL"></source>
-   </video>
+    <div id="video-container" style="position: relative;">
+        <video class="video-js vjs-big-play-centered vjs-theme-sea" controls="" data-setup="{}" fluid="true" id="my-video" poster="" preload="auto">
+            <source src="https://ayna-playlist.saqlainhaider.workers.dev/wanda.m3u8?id=28&e=.m3u8" type="application/x-mpegURL"></source>
+        </video>
+        <div class="watermark-container">
+            <div class="watermark">Breaking News: Your News Headline Here</div>
+        </div>
+    </div>
 
-   <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
-   <script src="https://unpkg.com/videojs-contribhls/dist/videojs-contrib-hls.js"></script>
+    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+    <script src="https://unpkg.com/videojs-contribhls/dist/videojs-contrib-hls.js"></script>
 
-   <script>
-   var player = videojs('my-video');
-   </script>
+    <script>
+        var player = videojs('my-video');
 
-</body></html>
+        // Add event listener for fullscreen change
+        player.on('fullscreenchange', function () {
+            player.trigger('resize'); // Trigger a resize event to update the watermark position
+        });
+    </script>
+</body>
+
+</html>
