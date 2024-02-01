@@ -19,7 +19,7 @@
             font-size: 15px;
             opacity: 0.5;
             white-space: nowrap;
-            animation: scrollWatermark 30s linear infinite; /* Adjust duration for slower speed */
+            animation: scrollWatermark 35s linear infinite; /* Adjust duration for slower speed */
             transform: translateX(100%); /* Initial position outside of the visible area */
         }
 
@@ -45,12 +45,12 @@
 </head>
 
 <body>
-    <div id="video-container" style="position: relative;">
+    <div id="video-container" style="position: relative; overflow: hidden;">
         <video class="video-js vjs-big-play-centered vjs-theme-sea" controls="" data-setup="{}" fluid="true" id="my-video" poster="" preload="auto">
             <source src="https://ayna-playlist.saqlainhaider.workers.dev/wanda.m3u8?id=28&e=.m3u8" type="application/x-mpegURL"></source>
         </video>
         <div class="watermark-container">
-            <div class="watermark">Breaking News: Your News Headline Here</div>
+            <div class="watermark">Join our Official Telegram Channel @freeiptv25 ! Thank You.</div>
         </div>
     </div>
 
