@@ -1,11 +1,65 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content ="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Player</title>
+
+    <!-- Add the Clappr CSS and JS links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/clappr/latest/clappr.css">
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+
+    <style type="text/css" media="screen" charset="utf-8">
+        #live-player {
+            position: fixed !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+        }
+        .dvr-player-wrapper {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="live-player"></div>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var player = new Clappr.Player({
+            source: 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100304/uhd_akamai_ctv_avc_eng_indvseng_test02day03040224/master.m3u8',
+            parentId: '#live-player',
+            width: '100%',
+            height: '100%',autoPlayVisible: 'partial',
+  watermark: '',
+  position: 'top-right', autoPlay: true,
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<!---
+
+<!DOCTYPE html>
 <html>
 <head>
- <meta name="robots" content ="noindex,nofollow">
+
+ name="robots" content ="noindex,nofollow">
  <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet"></link>
- <!-- CSS_ADSBLOCK_START -->
+ 
  <link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
- <!-- CSS_ADSBLOCK_END -->
+ 
 </head>
 
 <body>
@@ -21,3 +75,5 @@
    </script>
 
 </body></html>
+
+--->
