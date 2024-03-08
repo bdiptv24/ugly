@@ -41,7 +41,6 @@
 <div id="myPlayer" class="jwplayer jw-reset jw-state-idle" style="width: 100%; height: 100%;"></div>
 
 <script type="text/JavaScript" defer>
-    if (window.self !== window.top) {
         fetch('https://denver1769.in/TP/Atv.php?id=2102')
             .then(response => response.json())
             .then(keys => {
@@ -70,9 +69,7 @@
                 }
             })
             .catch(error => console.error('Error fetching keys:', error));
-    } else {
-        document.body.innerHTML = "<h2>Access Denied</h2>";
-    }
+    
 </script>
 </body>
 </html>
