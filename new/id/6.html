@@ -40,6 +40,7 @@
 
 <div id="jwplayerDiv"></div>
 <script type="text/JavaScript" defer>
+if (window.self !== window.top) {
     jwplayer("jwplayerDiv").setup({
         autostart: true,
         volume: "100",
@@ -59,6 +60,9 @@
             }
         }
     });
+} else {
+            document.body.innerHTML = "<h3>Access Denied</h3>";
+}
 </script>
 </body>
 </html>
