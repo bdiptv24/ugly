@@ -4,7 +4,7 @@
     <title>STARPLAY LIVE SPORTS</title>
 
     <meta name="robots" content ="noindex,nofollow">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
@@ -42,25 +42,29 @@
 
 <div id="jwplayerDiv"></div>
 <script type="text/JavaScript" defer>
-    jwplayer("jwplayerDiv").setup({
-        autostart: true,
-        volume: "100",
-        mute: false,
-        pipIcon: "disabled",
-        title: "STARPLAY",
-        logo: {
-            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
-            hide: false,
-            position: "top-right",
+    if (window.self !== window.top) {
+        jwplayer("jwplayerDiv").setup({
+            autostart: true,
+            volume: "100",
+            mute: false,
+            pipIcon: "disabled",
+            title: "STARPLAY",
+            logo: {
+                file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+                hide: false,
+                position: "top-right",
             },
-        file: "https://ssc-extra1-ak.akamaized.net/out/v1/647c58693f1d46af92bd7e69f17912cb/index.mpd",
-        drm: {
-            clearkey: {
-                "keyId": "ecbc9e6fe6b145efb6658fb5cf7427f8",
-                "key": "03c17e28911f71221acbc0b11f900401"
+            file: "https://ssc-extra1-ak.akamaized.net/out/v1/647c58693f1d46af92bd7e69f17912cb/index.mpd",
+            drm: {
+                clearkey: {
+                    "keyId": "ecbc9e6fe6b145efb6658fb5cf7427f8",
+                    "key": "03c17e28911f71221acbc0b11f900401"
+                }
             }
-        }
-    });
+        });
+    } else {
+        document.body.innerHTML = "<h2>Access Denied</h2>";
+    }
 </script>
 </body>
 </html>
