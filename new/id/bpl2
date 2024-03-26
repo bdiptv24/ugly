@@ -1,153 +1,214 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <title>STARPLAY LIVE SPORTS </title>
+    <title>STARPLAY LIVE SPORTS</title>
+
     <meta name="robots" content ="noindex,nofollow">
-    <meta content="never" name="referrer">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="description" content="ENJOY FREE LIVE SPORTS">
-    <meta name="keywords" content="LIVE TV, LIVE SPORTS">
-    <meta name="author" content="FREEIPTV25">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" type="image/x-icon" href="">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css" />
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        html {
-            font-family: Poppins;
-            background: #000;
+        body {
             margin: 0;
-            padding: 0
         }
 
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9999;
+        .jwplayer {
+            position: absolute !important;
         }
 
-        .loading-text {
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+        .jw-logo-container {
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            text-align: center;
-            width: 100%;
-            height: 100px;
-            line-height: 100px;
-        }
-
-        .loading-text span {
-            display: inline-block;
-            margin: 0 5px;
-            color: #e657ff;
-            font-family: 'Quattrocento Sans', sans-serif;
-        }
-
-        .loading-text span:nth-child(1),
-        .loading-text span:nth-child(2),
-        .loading-text span:nth-child(3),
-        .loading-text span:nth-child(4),
-        .loading-text span:nth-child(5),
-        .loading-text span:nth-child(6),
-        .loading-text span:nth-child(7),
-        .loading-text span:nth-child(8),
-        .loading-text span:nth-child(9) {
-            filter: blur(0px);
-            animation: blur-text 1.5s infinite linear alternate;
-        }
-
-        @keyframes blur-text {
-            0% {
-                filter: blur(0px);
-            }
-
-            100% {
-                filter: blur(4px);
-            }
-        }
-
-        :root {
-            --plyr-color-main: #e657ff;
-            --plyr-video-control-color: #e8ffba;
-        }
-
-        .plyr__video-wrapper::before {
-            content: '';
-            position: absolute;
-            z-index: 10;
-            height: 45%;
-            width: 65%;
             top: 2%;
-            left: 55%;
-            background: url(https://i.ibb.co/VMwb7DY/20231223-092825-0000.png);
-            background-size: 100% auto, auto;
-            background-repeat: no-repeat;
+            right: 55%;
         }
     </style>
 </head>
 
 <body>
-    <div id="loading" class="loading">
-        <div class="loading-text">
-            <span class="loading-text-words">S</span>
-            <span class="loading-text-words">T</span>
-            <span class="loading-text-words">A</span>
-            <span class="loading-text-words">R</span>
-            <span class="loading-text-words">P</span>
-            <span class="loading-text-words">L</span>
-            <span class="loading-text-words">A</span>
-            <span class="loading-text-words">Y</span>
-        </div>
-    </div>
-    <video autoplay controls crossorigin playsinline>
-        <source type="application/vnd.apple.mpegurl" src="https://livess.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/greentv.stream/playlist.m3u8">
-    </video>
+<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'
+        disable-select='true' disable-copy='true' disable-cut='true' disable-paste='true'>
+</script>
+<script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+<script>
+    jwplayer.defaults = jwDefaults;
+</script>
 
-    <script>
-        setTimeout(videovisible, 3000)
+<div id="myPlayer" class="jwplayer jw-reset jw-state-idle" style="width:100%;height:100%;"></div>
 
-        function videovisible() {
-            document.getElementById('loading').style.display = 'none'
+<div id="jwplayerDiv"></div>
+<script type="text/JavaScript" defer>
+    jwplayer("jwplayerDiv").setup({
+        autostart: true,
+        volume: "100",
+        mute: false,
+        pipIcon: "disabled",
+        title: "STARPLAY",
+        logo: {
+            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+            hide: false,
+            position: "top-right",
+            },
+        file: "https://linear014-gb-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_720_30/Live/channel(skysportscricket)/manifest_720.mpd",
+        drm: {
+            clearkey: {
+                "keyId": "000543c0dc49b43c0e816c2a404249de",
+                "key": "836c311dd132a49dbed1049d92800304"
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STARPLAY LIVE SPORTS</title>
+
+    <meta name="robots" content ="noindex,nofollow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            margin: 0;
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const e = document.querySelector("video"),
-                n = e.getElementsByTagName("source")[0].src,
-                o = {};
-            if (Hls.isSupported()) {
-                var config = {
-                    maxMaxBufferLength: 100,
-                };
-                const t = new Hls(config);
-                t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function (n, l) {
-                    const s = t.levels.map(e => e.height);
-                    o.quality = {
-                        default: s[0],
-                        options: s,
-                        forced: !0,
-                        onChange: e => (function (e) {
-                            window.hls.levels.forEach((n, o) => {
-                                n.height === e && (window.hls.currentLevel = o)
-                            })
-                        })(e)
-                    };
-                    new Plyr(e, o)
-                }), t.attachMedia(e), window.hls = t
-            } else {
-                new Plyr(e, o)
-            }
-        });
-    </script>
-</body>
+        .jwplayer {
+            position: absolute !important;
+        }
 
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+        .jw-logo-container {
+            position: absolute;
+            top: 2%;
+            right: 55%;
+        }
+    </style>
+</head>
+
+<body>
+<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'
+        disable-select='true' disable-copy='true' disable-cut='true' disable-paste='true'>
+</script>
+<script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+<script>
+    jwplayer.defaults = jwDefaults;
+</script>
+
+<div id="myPlayer" class="jwplayer jw-reset jw-state-idle" style="width:100%;height:100%;"></div>
+
+<div id="jwplayerDiv"></div>
+<script type="text/JavaScript" defer>
+    jwplayer("jwplayerDiv").setup({
+        autostart: true,
+        volume: "100",
+        mute: false,
+        pipIcon: "disabled",
+        title: "STARPLAY",
+        logo: {
+            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+            hide: false,
+            position: "top-right",
+            },
+        file: "https://linear014-gb-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_720_30/Live/channel(skysportscricket)/manifest_720.mpd",
+        drm: {
+            clearkey: {
+                "keyId": "000543c0dc49b43c0e816c2a404249de",
+                "key": "836c311dd132a49dbed1049d92800304"
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STARPLAY LIVE SPORTS</title>
+    <meta name="robots" content ="noindex,nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .jwplayer {
+            position: absolute !important;
+        }
+
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+        .jw-logo-container {
+            position: absolute;
+            top: 2%;
+            right: 55%;
+        }
+    </style>
+</head>
+
+<body>
+<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'
+        disable-select='true' disable-copy='true' disable-cut='true' disable-paste='true'>
+</script>
+<script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+<script>
+    jwplayer.defaults = jwDefaults;
+</script>
+
+<div id="myPlayer" class="jwplayer jw-reset jw-state-idle" style="width:100%;height:100%;"></div>
+
+<div id="jwplayerDiv"></div>
+<script type="text/JavaScript" defer>
+    jwplayer("jwplayerDiv").setup({
+        autostart: true,
+        volume: "100",
+        mute: false,
+        pipIcon: "disabled",
+        title: "STARPLAY",
+        logo: {
+            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+            hide: false,
+            position: "top-right",
+            },
+        file: "https://linear018-gb-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_720_30/Live/channel(skysportsmainevent)/manifest_720.mpd",
+        drm: {
+            clearkey: {
+                "keyId": "0005fad32eb7fe7f488093e851d71c5f",
+                "key": "6342118978914afbc5fec26e93168b64"
+            }
+        }
+    });
+</script>
+</body>
 </html>
