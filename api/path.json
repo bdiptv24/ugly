@@ -1,0 +1,20 @@
+{
+    "channels": [
+        {
+            "channel_name": "Channel A",
+            "mpd_url": "mpd link here",
+            "drm_info": {
+                "keyId": "keyId here",
+                "key": "key here"
+            }
+        },
+        {
+            "channel_name": "Channel B",
+            "mpd_url": "mpd link here",
+            "drm_info": {
+                "keyId": "keyId here",
+                "key": "key here"
+            }
+        }
+    ]
+}
