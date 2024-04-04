@@ -42,8 +42,8 @@
     fetch('path.json')
         .then(response => response.json())
         .then(data => {
-            const drmKey = data.channel9.drm_info.key;
-            const drmKeyId = data.channel9.drm_info.keyId;
+            const drmKey = data.channel10.drm_info.key;
+            const drmKeyId = data.channel10.drm_info.keyId;
             
             jwplayer("jwplayerDiv").setup({
                 autostart: true,
