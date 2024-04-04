@@ -39,7 +39,7 @@
 
 <div id="jwplayerDiv"></div>
 <script type="text/JavaScript" defer>
-    fetch('https://tvs1.vercel.app/path.json')
+    fetch('path.json')
         .then(response => response.json())
         .then(data => {
             const drmKey = data.channel9.drm_info.key;
