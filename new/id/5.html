@@ -34,11 +34,11 @@
     jwplayer.defaults = jwDefaults;
 </script>
 
-<div id="playerContainer" style="width:100%;height:100%;"></div>
+<div id="playerContainerB" style="width:100%;height:100%;"></div>
 
 <script type="text/javascript">
     // Load channels from external file
-    fetch('path.json')
+    fetch('/new/id/5.html/api/path.json') // Update the path to your path.json file
         .then(response => response.json())
         .then(data => {
             // Find Channel B info
@@ -49,7 +49,7 @@
         .catch(error => console.error('Error loading channels:', error));
 
     function createPlayer(channelInfo) {
-        var playerInstance = jwplayer("playerContainer");
+        var playerInstance = jwplayer("playerContainerB"); // Update the container id
         playerInstance.setup({
             autostart: true,
             volume: "100",
