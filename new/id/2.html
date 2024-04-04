@@ -25,6 +25,13 @@
             top: 2%;
             right: 55%;
         }
+          .access-denied {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px; /* Adjust the value as needed */
+            font-size: 24px; /* Adjust the font size as needed */
+        }
     </style>
 </head>
 
@@ -64,7 +71,7 @@
                     }
                 }
             }); } else {
-        document.body.innerHTML = "<h2>Access Denied</h2>";
+        document.body.innerHTML = "<h2  class='access-denied'>Access Denied</h2>";
     }
         });
 </script>
