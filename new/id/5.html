@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STARPLAY LIVE SPORTS</title>
+    <title>Player for Channel B</title>
     <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,33 +41,31 @@
     fetch('path.json')
         .then(response => response.json())
         .then(data => {
-            // Create player for each channel
-            data.channels.forEach(channel => {
-                setupPlayer(channel);
-            });
+            // Find Channel B info
+            const channelBInfo = data.channels.find(channel => channel.channel_name === "Channel B");
+            // Create player for Channel B
+            createPlayer(channelBInfo);
         })
         .catch(error => console.error('Error loading channels:', error));
 
-    var playerInstance;
-
-    function setupPlayer(channel) {
-        playerInstance = jwplayer("playerContainer-" + channel.channel_name);
+    function createPlayer(channelInfo) {
+        var playerInstance = jwplayer("playerContainer");
         playerInstance.setup({
             autostart: true,
             volume: "100",
             mute: false,
             pipIcon: "disabled",
-            title: "STARPLAY - " + channel.channel_name,
+            title: "STARPLAY - " + channelInfo.channel_name,
             logo: {
                 file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
                 hide: false,
                 position: "top-right",
             },
-            file: channel.mpd_url,
+            file: channelInfo.mpd_url,
             drm: {
                 clearkey: {
-                    "keyId": channel.drm_info.keyId,
-                    "key": channel.drm_info.key
+                    "keyId": channelInfo.drm_info.keyId,
+                    "key": channelInfo.drm_info.key
                 }
             }
         });
