@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>STARPLAY LIVE SPORTS</title>
-    <meta name="robots" content ="noindex,nofollow">
+    <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,37 +29,49 @@
 </head>
 
 <body>
-<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'
-        disable-select='true' disable-copy='true' disable-cut='true' disable-paste='true'>
-</script>
 <script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
 <script>
     jwplayer.defaults = jwDefaults;
 </script>
 
-<div id="myPlayer" class="jwplayer jw-reset jw-state-idle" style="width:100%;height:100%;"></div>
+<div id="playerContainer" style="width:100%;height:100%;"></div>
 
-<div id="jwplayerDiv"></div>
-<script type="text/JavaScript" defer>
-    jwplayer("jwplayerDiv").setup({
-        autostart: true,
-        volume: "100",
-        mute: false,
-        pipIcon: "disabled",
-        title: "STARPLAY",
-        logo: {
-            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
-            hide: false,
-            position: "top-right",
+<script type="text/javascript">
+    // Load channels from external file
+    fetch('api/path.json')
+        .then(response => response.json())
+        .then(data => {
+            // Create player for each channel
+            data.channels.forEach(channel => {
+                setupPlayer(channel);
+            });
+        })
+        .catch(error => console.error('Error loading channels:', error));
+
+    var playerInstance;
+
+    function setupPlayer(channel) {
+        playerInstance = jwplayer("playerContainer-" + channel.channel_name);
+        playerInstance.setup({
+            autostart: true,
+            volume: "100",
+            mute: false,
+            pipIcon: "disabled",
+            title: "STARPLAY - " + channel.channel_name,
+            logo: {
+                file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+                hide: false,
+                position: "top-right",
             },
-        file: "https://linear032-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_hd/Live/channel(sportsmix50)/manifest_hd.mpd",
-        drm: {
-            clearkey: {
-                "keyId": "0003a6c61c2b2f7f0a9d760ac83c06d8",
-                "key": "7305fa96d356316f2d544bfc78a6922c"
+            file: channel.mpd_url,
+            drm: {
+                clearkey: {
+                    "keyId": channel.drm_info.keyId,
+                    "key": channel.drm_info.key
+                }
             }
-        }
-    });
+        });
+    }
 </script>
 </body>
 </html>
