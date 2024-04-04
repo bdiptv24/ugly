@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Player for Channel B</title>
+    <title>Player for Channel 9</title>
     <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,34 +34,34 @@
     jwplayer.defaults = jwDefaults;
 </script>
 
-<div id="playerContainerB" style="width:100%;height:100%;"></div>
+<div id="playerContainer" style="width:100%;height:100%;"></div>
 
 <script type="text/javascript">
-    // Load channels from external file
-    fetch('path.json') // Update the path to your path.json file
+    // Load channel info from path.json
+    fetch('path.json')
         .then(response => response.json())
         .then(data => {
-            // Find Channel B info
-            const channelBInfo = data.channels.find(channel => channel.channel_name === "Channel B");
-            // Create player for Channel B
-            createPlayer(channelBInfo);
+            // Find Channel 9 info
+            const channel9Info = data.channel9;
+            // Create player for Channel 9
+            createPlayer(channel9Info);
         })
-        .catch(error => console.error('Error loading channels:', error));
+        .catch(error => console.error('Error loading channel info:', error));
 
     function createPlayer(channelInfo) {
-        var playerInstance = jwplayer("playerContainerB"); // Update the container id
+        var playerInstance = jwplayer("playerContainer");
         playerInstance.setup({
             autostart: true,
             volume: "100",
             mute: false,
             pipIcon: "disabled",
-            title: "STARPLAY - " + channelInfo.channel_name,
+            title: "Player for Channel 9",
             logo: {
                 file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
                 hide: false,
                 position: "top-right",
             },
-            file: channelInfo.mpd_url,
+            file: channelInfo.url,
             drm: {
                 clearkey: {
                     "keyId": channelInfo.drm_info.keyId,
