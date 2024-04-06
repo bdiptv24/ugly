@@ -29,18 +29,18 @@ canvas {
   left: 50%;
   margin-left: -285px;
   height: 40px;
-  top: 10%;
+  top: 5%;
   background: #fff;
   margin-top: -20px;
   color: #000;       
 }
 
-.word {
+.word {color: #000;  
   position: absolute;
   opacity: 0;
 }
 
-.letter {
+.letter {color: #000;  
   display: inline-block;
   position: relative;
   float: left;
