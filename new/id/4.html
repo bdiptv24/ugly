@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STARPLAY LIVE SPORTS</title>
+    <title>JOIN TELEGRAM @freeiptv25 || STARPLAY LIVE SPORTS</title>
     <meta name="robots" content ="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,13 +25,16 @@
             top: 2%;
             right: 55%;
         }
+          .access-denied {
+            position: absolute;
+            left: 25px;
+            font-size: 24px;
+        }
     </style>
 </head>
 
 <body>
-<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'
-        disable-select='true' disable-copy='true' disable-cut='true' disable-paste='true'>
-</script>
+
 <script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
 <script>
     jwplayer.defaults = jwDefaults;
@@ -41,25 +44,34 @@
 
 <div id="jwplayerDiv"></div>
 <script type="text/JavaScript" defer>
-    jwplayer("jwplayerDiv").setup({
-        autostart: true,
-        volume: "100",
-        mute: false,
-        pipIcon: "disabled",
-        title: "STARPLAY",
-        logo: {
-            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
-            hide: false,
-            position: "top-right",
-            },
-        file: "https://linear015-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_720_120/Live/channel(skysportsmainevent)/manifest_720.mpd",
-        drm: {
-            clearkey: {
-                "keyId": "0005403920c26e3aa0c4d81338d2690e",
-                "key": "0931a3d1d36ae95a7fb7e08111aab4b3"
-            }
-        }
-    });
+    fetch('path.json')
+        .then(response => response.json())
+        .then(data => {
+            const drmKey = data.channel12.drm_info.key;
+            const drmKeyId = data.channel12.drm_info.keyId;
+
+         if (window.self !== window.top) {   jwplayer("jwplayerDiv").setup({
+                autostart: true,
+                volume: "100",
+                mute: false,
+                pipIcon: "disabled",
+                title: "STARPLAY",
+                logo: {
+                    file: "https://i.ibb.co/fDG1Z5Y/20240326-214523.png",
+                    hide: false,
+                    position: "top-right",
+                },
+                file: "https://linear015-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_720_120/Live/channel(skysportsmainevent)/manifest_720.mpd",
+                drm: {
+                    clearkey: {
+                        "keyId": drmKeyId,
+                        "key": drmKey
+                    }
+                }
+            }); } else {
+        document.body.innerHTML = "<h2  class='access-denied'>Access Denied</h2>";
+    }
+        });
 </script>
 </body>
-</html>
+</html> 
