@@ -10,5 +10,23 @@
             "keyId": "0005cd7d2b9121a3c8586709d03f0e16",
             "key": "aa548c9e2a24dd9cfda694a89c4b8dce"
         }
-    }
+    },
+    "channel11": {
+        "drm_info": {
+            "keyId": "00058250a3379de8bc837253d41fb434",
+            "key": "f0dfa2c26f12eaf2c9b3c5a4a4f15a86"
+        }
+    },
+    "channel12": {
+        "drm_info": {
+            "keyId": "0005cd7d2b9121a3c8586709d03f0e16",
+            "key": "aa548c9e2a24dd9cfda694a89c4b8dce"
+        }
+    }, 
+    "channel13": {
+        "drm_info": {
+            "keyId": "0005cd7d2b9121a3c8586709d03f0e16",
+            "key": "aa548c9e2a24dd9cfda694a89c4b8dce"
+        }
+    }, 
 }
