@@ -3,8 +3,8 @@
 <head>
     <title>STARPLAY LIVE SPORTS</title>
 
-    <meta name="robots" content ="noindex,nofollow">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
@@ -42,28 +42,28 @@
 
 <div id="jwplayerDiv"></div>
 <script type="text/JavaScript" defer>
-if (window.self !== window.top) {
-    jwplayer("jwplayerDiv").setup({
-        autostart: true,
-        volume: "100",
-        mute: false,
-        pipIcon: "disabled",
-        title: "STARPLAY",
-        logo: {
-            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
-            hide: false,
-            position: "top-right",
+    if (window.self !== window.top) {
+        jwplayer("jwplayerDiv").setup({
+            autostart: true,
+            volume: "100",
+            mute: false,
+            pipIcon: "disabled",
+            title: "STARPLAY",
+            logo: {
+                file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+                hide: false,
+                position: "top-right",
             },
-        file: "https://webtvstream.bhtelecom.ba/hls6/as_premium1.mpd",
-        drm: {
-            clearkey: {
-                "keyId": "c18b6aa739be4c0b774605fcfb5d6b68",
-                "key": "e41c3a6f7532b2e3a828d9580124c89d"
+            file: "https://webtvstream.bhtelecom.ba/hls6/as_premium1.mpd",
+            drm: {
+                clearkey: {
+                    "keyId": "c18b6aa739be4c0b774605fcfb5d6b68",
+                    "key": "e41c3a6f7532b2e3a828d9580124c89d"
+                }
             }
-        }
-    });
-} else {
-        document.body.innerHTML = "<h2>Access Denied</h2>";
+        });
+    } else {
+        window.location.href = 'https://tvs1.vercel.app';
     }
 </script>
 </body>
