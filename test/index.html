@@ -1,40 +1,36 @@
 <main class="table" id="customers_table">
-        
-        <section class="table__body">
-            <table>
-                
-                <tbody>
-                    <tr>
-
-
-<a href="live.html"><td>
-        
-            <p class="des">Live Match</p>
-            
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJLKt7BWRIjFtCTU9BebFOvk0G0tSXb09pA&amp;s" alt="" class="t1">
-                <img src="img/pngwing.com.png" alt="" class="vs">
-                <img src="https://t3.ftcdn.net/jpg/06/12/34/84/360_F_612348476_k3i3brMUOo3N9Wk3yoceMHqZ8w4jpFqu.jpg" alt="" class="t2">
-            
-            <p class="status pending">LIVE</p>
-        </td>
-    </a>
-</tr>
-<tr>
-
-    <a href="icc/live.html"><td>
-        
-            <p class="des">ICC Women's T20 World Cup</p>
-            
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/2024_ICC_Women%27s_T20_World_Cup_qualifier_logo.jpg" alt="" class="t1">
-                <img src="img/pngwing.com.png" alt="" class="vs">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/2024_ICC_Women%27s_T20_World_Cup_qualifier_logo.jpg" alt="" class="t2">
-            
-            <p class="status delivered">LIVE</p>
-      </td>  
-    </a></tr>
-</tbody>
-         </table>
-      </section>
+    <section class="table__body">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="live.html">
+                            <p class="des">Live Match</p>
+                            <div class="card-des">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJLKt7BWRIjFtCTU9BebFOvk0G0tSXb09pA&amp;s" alt="" class="t1">
+                                <img src="img/pngwing.com.png" alt="" class="vs">
+                                <img src="https://t3.ftcdn.net/jpg/06/12/34/84/360_F_612348476_k3i3brMUOo3N9Wk3yoceMHqZ8w4jpFqu.jpg" alt="" class="t2">
+                            </div>
+                            <p class="status pending">LIVE</p>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="icc/live.html">
+                            <p class="des">ICC Women's T20 World Cup</p>
+                            <div class="card-des">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/2024_ICC_Women%27s_T20_World_Cup_qualifier_logo.jpg" alt="" class="t1">
+                                <img src="img/pngwing.com.png" alt="" class="vs">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/2024_ICC_Women%27s_T20_World_Cup_qualifier_logo.jpg" alt="" class="t2">
+                            </div>
+                            <p class="status delivered">LIVE</p>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </main>
 
 <style>
@@ -422,46 +418,15 @@ thead th.active,tbody td.active {
     font-weight: bold;
     font-size: 30px;
 }
-/* Card styling */
-.card {
-    width: 300px; /* Adjust the width as needed */
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Description styling */
-.card .des {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Image container styling */
-.card .card-des {
+.card-des {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between; /* Distribute items */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Take full width of the parent */
 }
 
-/* Image styling */
-.card .card-des img {
-    width: 50px;
+.card-des img {
+    width: 50px; /* Adjust size as needed */
     height: 50px;
-    margin: 0 10px;
-}
-
-.card .card-des img.vs {
-    width: 40px; /* Smaller size for the 'vs' image */
-    height: auto;
-}
-
-.card .live {
-    margin-top: 10px;
-    font-weight: bold;
-    color: red;
 }
 </style>
