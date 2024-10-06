@@ -422,59 +422,30 @@ thead th.active,tbody td.active {
     font-weight: bold;
     font-size: 30px;
 }
-.t1{
-    width: 85px;
-    height: 85px;
-    border-radius: 90px;
-    
-}
-
-.t2{
-    width: 85px;
-    height: 85px;
-    border-radius: 90px;
-    
-}
-
-.card-des{
+/* Parent td element styling */
+td {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    
 }
 
-.live{
-    text-align: center;
-    color: rgb(255, 0, 0);
-    font-weight: bold;
-    font-size: 30px;
-    
+/* Image styling */
+td img.t1 {
+    align-self: flex-start; /* Left align */
 }
 
-.vs{
-    width: 60px;
-    margin-bottom: 10px;
+td img.vs {
+    align-self: center; /* Center align */
 }
 
-@media (max-width: 480px) {
-    .card{
-        height: 150px;
-    }
+td img.t2 {
+    align-self: flex-end; /* Right align */
+    margin-left: 10px; /* Add some space between vs and t2 */
+}
 
-    .t1{
-        width: 60px;
-        height: 60px;
-        border-radius: 80px;
-    }
-
-    .t2{
-        width: 60px;
-        height: 60px;
-        border-radius: 80px;
-    }
-
-    .vs{
-        width: 40px;
-        margin-bottom: 5px;
-    }
+td img {
+    width: 50px; /* Adjust the image size as needed */
+    height: 50px;
+    border-radius: 50%; /* Optional if you want circular images */
+}
 </style>
