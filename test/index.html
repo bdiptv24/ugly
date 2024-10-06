@@ -452,4 +452,29 @@ a {
 .t2 {
     margin-left: 5px; /* Space between vs and t2 */
 }
+
+.card a {
+    text-decoration: none; /* Removes default underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.card a .des {
+    position: relative; /* Enable positioning for the pseudo-element */
+}
+
+.card a .des::after {
+    content: ""; /* Pseudo-element for the underline */
+    display: block;
+    width: 100%; /* Full width of the text */
+    height: 2px; /* Thickness of the underline */
+    background: #6c00bd; /* Underline color */
+    position: absolute;
+    bottom: -4px; /* Position it below the text */
+    left: 0; /* Align to the left */
+}
+
+/* Remove the hover effect */
+.card a:hover .des::after {
+    transform: none; /* Do nothing on hover */
+}
 </style>
