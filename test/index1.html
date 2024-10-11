@@ -146,15 +146,21 @@
         margin-bottom: 50px;
     }
 
-    .card {
-        height: 250px;
-        width: 100%;
-        border: 2px solid green;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        background-color: rgb(25, 54, 22);
-        transition: 0.5s;
-    }
+    .card:nth-child(odd) {
+    background-color: white; /* সাদা রঙ প্রথম, তৃতীয়, পঞ্চম ইত্যাদি কার্ডের জন্য */
+}
+
+.card:nth-child(even) {
+    background-color: #d5d1defe; /* দ্বিতীয়, চতুর্থ ইত্যাদি কার্ডের জন্য #d5d1defe রঙ */
+}
+
+.card {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid green;
+}
 
     .card:hover {
         background-color: rgb(38, 56, 36);
@@ -238,12 +244,6 @@
     margin: 0 auto; /* This will now work properly to center the status */
 }
 
-.card:nth-child(odd) {
-    background-color: white; /* সাদা রঙ প্রথম, তৃতীয়, পঞ্চম ইত্যাদি কার্ডের জন্য */
-}
 
-.card:nth-child(even) {
-    background-color: #000; /* দ্বিতীয়, চতুর্থ ইত্যাদি কার্ডের জন্য #d5d1defe রঙ */
-}
 
 </style>
