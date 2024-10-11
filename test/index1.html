@@ -228,11 +228,14 @@
     background-color: #86e49d;
     color: #006b21;
 }
+
 .status {
     padding: .2rem 0.5rem;
     border-radius: 2rem;
     text-align: center;
-    display: inline-block;
-    margin: 0 auto;
+    display: block; /* Change to block to take full width */
+    width: fit-content; /* Ensure the width is just enough to fit the text */
+    margin: 0 auto; /* This will now work properly to center the status */
 }
+
 </style>
