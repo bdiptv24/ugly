@@ -22,7 +22,7 @@
         </div>
 
         <!-- First Match Card -->
-        <a href="live.html">
+    <tbody><tr><td>    <a href="live.html">
             <div class="card">
                 <p class="des">Live Match</p>
                 <div class="card-des">
@@ -32,7 +32,7 @@
                 </div>
                 <p class="live">LIVE</p>
             </div>
-        </a>
+        </a></td></tr></tbody>
 
         <!-- ICC Women's T20 World Cup -->
         <a href="icc/live.html">
@@ -249,4 +249,57 @@ font-family: sans-serif;
 
 
 
+
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: center;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+}
 </style>
