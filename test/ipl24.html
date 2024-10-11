@@ -1,3 +1,63 @@
-#EXTM3U
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2048000,RESOLUTION=1280x720
-http://1.1usd.tv:34000/ch235/mono.m3u8?token=1usdtv_kol218.FQLwEoHD4r5K2LNrRWktdO1g3jYg-zRf8aBHKZw6i5X5jYftfSvvtDJl7A7bUKlq
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3U8 Video Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+
+<video id="videoPlayer" controls></video>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const video = document.getElementById('videoPlayer');
+        const videoUrl = 'https://webufffit.mizhls.ru/lb/eplayerskycric/index.m3u8?|referer=https://olalivehdplay.ru/z.m3u8/&user-agent=Android';
+
+        // Check if HLS is supported
+        if (Hls.isSupported()) {
+            const hls = new Hls({
+                xhrSetup: function (xhr, url) {
+                    // Set the Referer header and User-Agent for the request
+                    xhr.setRequestHeader('Referer', 'https://olalivehdplay.ru/z.m3u8/');
+                    xhr.setRequestHeader('User-Agent', 'Android');
+                }
+            });
+
+            // Load the M3U8 stream
+            hls.loadSource(videoUrl.split('?')[0]); // Remove query parameters for HLS.js
+            hls.attachMedia(video);
+
+            // Play the video once the manifest is parsed
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        }
+        // Fallback for Safari browsers
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoUrl.split('?')[0]; // Remove query parameters for direct usage
+            video.addEventListener('loadedmetadata', function () {
+                video.play();
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
