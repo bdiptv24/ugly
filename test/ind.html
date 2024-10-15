@@ -115,15 +115,17 @@
             margin: 20px 0;
         }
         #channelInfo {
-            font-size: 24px;
+            font-size: 18px; /* Increased font size */
             font-weight: bold;
             text-align: left;
+            flex: 1; /* Use flex to take available space */
         }
         .dark-mode-toggle {
             background: none;
             border: none;
             color: var(--text-color);
             font-size: 16px;
+            font-weight: bold;/* Increased font size */
             cursor: pointer;
             padding: 10px;
             transition: color 0.3s, transform 0.3s;
@@ -138,7 +140,7 @@
         }
         @media (max-width: 768px) {
             #channelInfoWrapper {
-                flex-direction: column; /* Stack channel name and toggle vertically on small screens */
+                flex-direction: row; /* Keep them in a row */
                 gap: 10px;
             }
         }
@@ -155,11 +157,11 @@
         <div id="channelInfoWrapper">
             <div id="channelInfo">Rajshahi TV</div> <!-- Example Channel Name -->
             <button id="darkModeToggle" class="dark-mode-toggle">
-                Dark Mode <i class="fas fa-moon"></i>
+                <i class="fas fa-moon"></i>
             </button>
         </div>
         <div class="controls">
-            <button id="prevBtn" class="btn"><i class="fas fa-step-backward"></i> </button>
+            <button id="prevBtn" class="btn"><i class="fas fa-step-backward"></i></button>
             <div class="channel-select">
                 <select id="channelSelect"></select>
             </div>
@@ -229,8 +231,8 @@
             document.body.classList.toggle('dark-mode');
             const isDarkMode = document.body.classList.contains('dark-mode');
             darkModeToggle.innerHTML = isDarkMode 
-                ? 'Light Mode <i class="fas fa-sun"></i>' 
-                : 'Dark Mode <i class="fas fa-moon"></i>';
+                ? ' <i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
         });
 
         initializePlayer();
