@@ -110,7 +110,7 @@
         }
         #channelInfoWrapper {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Aligns content to left and right */
             align-items: center;
             margin: 20px 0;
         }
@@ -127,8 +127,6 @@
             cursor: pointer;
             padding: 10px;
             transition: color 0.3s, transform 0.3s;
-            display: flex;
-            align-items: center;
             text-align: right;
         }
         .dark-mode-toggle i {
@@ -139,15 +137,9 @@
             transform: scale(1.1);
         }
         @media (max-width: 768px) {
-            .controls {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .channel-select {
-                width: 100%;
-            }
             #channelInfoWrapper {
-                flex-direction: column;
+                flex-direction: column; /* Stack channel name and toggle vertically on small screens */
+                gap: 10px;
             }
         }
     </style>
@@ -161,23 +153,22 @@
             </div>
         </div>
         <div id="channelInfoWrapper">
-            <div id="channelInfo"></div>
+            <div id="channelInfo">Rajshahi TV</div> <!-- Example Channel Name -->
             <button id="darkModeToggle" class="dark-mode-toggle">
                 Dark Mode <i class="fas fa-moon"></i>
             </button>
         </div>
         <div class="controls">
-            <button id="prevBtn" class="btn"><i class="fas fa-step-backward"></i> Prev</button>
+            <button id="prevBtn" class="btn"><i class="fas fa-step-backward"></i> </button>
             <div class="channel-select">
                 <select id="channelSelect"></select>
             </div>
-            <button id="nextBtn" class="btn">Next <i class="fas fa-step-forward"></i></button>
+            <button id="nextBtn" class="btn"><i class="fas fa-step-forward"></i></button>
         </div>
     </div>
 
     <script>
         const iframePlayer = document.getElementById('iframePlayer');
-        const channelInfo = document.getElementById('channelInfo');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const channelSelect = document.getElementById('channelSelect');
@@ -185,7 +176,7 @@
         const darkModeToggle = document.getElementById('darkModeToggle');
 
         const channels = [
-            { name: "Rajshahi Tv", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" }, // Example iframe embed URL
+            { name: "Rajshahi TV", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" }, // Example iframe embed URL
             { name: "Sports Live", url: "https://www.youtube.com/embed/someVideo2" },
             { name: "Movie Central", url: "https://www.youtube.com/embed/someVideo3" },
             { name: "Music TV", url: "https://www.youtube.com/embed/someVideo4" },
@@ -218,6 +209,7 @@
         }
 
         function updateChannelInfo() {
+            const channelInfo = document.getElementById('channelInfo');
             channelInfo.textContent = channels[currentChannel].name;
         }
 
