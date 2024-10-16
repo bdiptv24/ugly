@@ -167,6 +167,39 @@
                 gap: 10px;
             }
         }
+
+
+
+
+
+
+.channel-select {
+    position: relative;
+    width: 200px;
+}
+
+.channel-select select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid var(--primary-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.channel-select::after {
+    content: '\25BC'; /* Dropdown arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: var(--text-color);
+}
     </style>
 </head>
 <body>
