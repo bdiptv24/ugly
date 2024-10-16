@@ -59,6 +59,27 @@
             color: #fff;
             display: none;
         }
+    .notice-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent; /* Transparent background */
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    z-index: 999;
+    overflow: hidden;
+}
+.notice {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollNotice 10s linear infinite;
+}
+        @keyframes scrollNotice {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         .controls {
             display: flex;
             justify-content: space-between;
@@ -153,6 +174,9 @@
             <div class="loading" id="loading">
                 <i class="fas fa-spinner fa-spin"></i> Loading...
             </div>
+            <div class="notice-wrapper">
+                <div class="notice">This is a custom scrolling notice for important updates!</div>
+            </div>
         </div>
         <div id="channelInfoWrapper">
             <div id="channelInfo">Rajshahi Tv</div> <!-- Example Channel Name -->
@@ -231,8 +255,8 @@
             document.body.classList.toggle('dark-mode');
             const isDarkMode = document.body.classList.contains('dark-mode');
             darkModeToggle.innerHTML = isDarkMode 
-                ? ' <i class="fas fa-sun"></i>' 
-                : '<i class="fas fa-moon"></i>';
+                ? 'Light Mode <i class="fas fa-sun"></i>' 
+                : 'Dark Mode <i class="fas fa-moon"></i>';
         });
 
         initializePlayer();
