@@ -74,9 +74,11 @@
 .notice {
     display: inline-block;
     white-space: nowrap;
-    animation: scrollNotice 10s linear infinite;
+    animation: scrollNotice 12s linear infinite;
+    opacity: 0.6;
 }
-        @keyframes scrollNotice {
+
+@keyframes scrollNotice {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
