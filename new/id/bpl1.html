@@ -1,89 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta name="robots" content="noindex,nofollow">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Sports by Freeiptv25</title>
+    <title>STARPLAY LIVE SPORTS</title>
+    <meta name="robots" content ="noindex,nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            margin: 0;
+        }
 
-    <!-- Add the Clappr CSS and JS links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/clappr/latest/clappr.css">
-    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+        .jwplayer {
+            position: absolute !important;
+        }
 
-    <style type="text/css" media="screen" charset="utf-8">
-        #live-player {
-            position: fixed !important;
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+        .jw-logo-container {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: black;
-        }
-        .dvr-player-wrapper {
-            background-color: black;
-        }
-        [data-watermark] {
-            min-width: 100px !important; /* Adjust the minimum width */
-            max-width: 350px !important; /* Adjust the maximum width */
-            width: 70% !important; /* Adjust the width percentage */
-            top: 5px !important; /* Adjust the top position */
-            right: -80px !important; /* Adjust the right position */
+            top: 2%;
+            right: 55%;
         }
     </style>
 </head>
+
 <body>
-
-<div id="live-player"></div>
-
-<script type="text/javascript">
-    window.onload = function () {
-        var player = new Clappr.Player({
-            source: 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100304/uhd_akamai_ctv_avc_eng_indvseng_test02day03040224/master.m3u8',
-            parentId: '#live-player',
-            width: '100%',
-            height: '100%',
-            autoPlayVisible: 'partial',
-            watermark: 'https://i.ibb.co/VMwb7DY/20231223-092825-0000.png',
-            position: 'top-right',
-            autoPlay: true,
-        });
-    }
+<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'
+        disable-select='true' disable-copy='true' disable-cut='true' disable-paste='true'>
+</script>
+<script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+<script>
+    jwplayer.defaults = jwDefaults;
 </script>
 
+<div id="myPlayer" class="jwplayer jw-reset jw-state-idle" style="width:100%;height:100%;"></div>
+
+<div id="jwplayerDiv"></div>
+<script type="text/JavaScript" defer>
+    jwplayer("jwplayerDiv").setup({
+        autostart: true,
+        volume: "100",
+        mute: false,
+        pipIcon: "disabled",
+        title: "STARPLAY",
+        logo: {
+            file: "https://imgtr.ee/images/2023/12/26/1ce485d929f0c4b3bdef1810f915a21d.png",
+            hide: false,
+            position: "top-right",
+            },
+        file: "https://ottb.live.cf.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/tu06vubgf9/out/v1/7668f47d28e345979c072e361f3d3ce3/cenc.mpd",
+        drm: {
+            clearkey: {
+                "keyId": "6d08b265a6639e32da7c880d5491e3d2",
+                "key": "0c92556ca14b95f367993710e7cfbc94"
+            }
+        }
+    });
+</script>
 </body>
 </html>
-
-
-
-
-
-
-<!---
-
-<!DOCTYPE html>
-<html>
-<head>
-
- name="robots" content ="noindex,nofollow">
- <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet"></link>
- 
- <link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
- 
-</head>
-
-<body>
-   <video class="video-js vjs-big-play-centered vjs-theme-sea" controls="" data-setup="{}" fluid="true" id="my-video" poster="" preload="auto">
-      <source src="https://hls.streambtw.com/live/stream_6.m3u8" type="application/x-mpegURL"></source>
-   </video>
-
-   <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
-   <script src="https://unpkg.com/videojs-contribhls/dist/videojs-contrib-hls.js"></script>
-
-   <script>
-   var player = videojs('my-video');
-   </script>
-
-</body></html>
-
---->
